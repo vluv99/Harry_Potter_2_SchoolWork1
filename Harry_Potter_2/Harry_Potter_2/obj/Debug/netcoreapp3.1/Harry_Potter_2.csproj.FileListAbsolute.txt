@@ -1,0 +1,13 @@
+D:\Documents\School\5.felev\Alkalmazasfejlesztes-II\kötprog_1\kotprog-01-CLI\harry-potter-2\harry-potter-2\Harry_Potter_2\Harry_Potter_2\bin\Debug\netcoreapp3.1\Harry_Potter_2.exe
+D:\Documents\School\5.felev\Alkalmazasfejlesztes-II\kötprog_1\kotprog-01-CLI\harry-potter-2\harry-potter-2\Harry_Potter_2\Harry_Potter_2\bin\Debug\netcoreapp3.1\Harry_Potter_2.deps.json
+D:\Documents\School\5.felev\Alkalmazasfejlesztes-II\kötprog_1\kotprog-01-CLI\harry-potter-2\harry-potter-2\Harry_Potter_2\Harry_Potter_2\bin\Debug\netcoreapp3.1\Harry_Potter_2.runtimeconfig.json
+D:\Documents\School\5.felev\Alkalmazasfejlesztes-II\kötprog_1\kotprog-01-CLI\harry-potter-2\harry-potter-2\Harry_Potter_2\Harry_Potter_2\bin\Debug\netcoreapp3.1\Harry_Potter_2.runtimeconfig.dev.json
+D:\Documents\School\5.felev\Alkalmazasfejlesztes-II\kötprog_1\kotprog-01-CLI\harry-potter-2\harry-potter-2\Harry_Potter_2\Harry_Potter_2\bin\Debug\netcoreapp3.1\Harry_Potter_2.dll
+D:\Documents\School\5.felev\Alkalmazasfejlesztes-II\kötprog_1\kotprog-01-CLI\harry-potter-2\harry-potter-2\Harry_Potter_2\Harry_Potter_2\bin\Debug\netcoreapp3.1\Harry_Potter_2.pdb
+D:\Documents\School\5.felev\Alkalmazasfejlesztes-II\kötprog_1\kotprog-01-CLI\harry-potter-2\harry-potter-2\Harry_Potter_2\Harry_Potter_2\obj\Debug\netcoreapp3.1\Harry_Potter_2.csprojAssemblyReference.cache
+D:\Documents\School\5.felev\Alkalmazasfejlesztes-II\kötprog_1\kotprog-01-CLI\harry-potter-2\harry-potter-2\Harry_Potter_2\Harry_Potter_2\obj\Debug\netcoreapp3.1\Harry_Potter_2.AssemblyInfoInputs.cache
+D:\Documents\School\5.felev\Alkalmazasfejlesztes-II\kötprog_1\kotprog-01-CLI\harry-potter-2\harry-potter-2\Harry_Potter_2\Harry_Potter_2\obj\Debug\netcoreapp3.1\Harry_Potter_2.AssemblyInfo.cs
+D:\Documents\School\5.felev\Alkalmazasfejlesztes-II\kötprog_1\kotprog-01-CLI\harry-potter-2\harry-potter-2\Harry_Potter_2\Harry_Potter_2\obj\Debug\netcoreapp3.1\Harry_Potter_2.csproj.CoreCompileInputs.cache
+D:\Documents\School\5.felev\Alkalmazasfejlesztes-II\kötprog_1\kotprog-01-CLI\harry-potter-2\harry-potter-2\Harry_Potter_2\Harry_Potter_2\obj\Debug\netcoreapp3.1\Harry_Potter_2.dll
+D:\Documents\School\5.felev\Alkalmazasfejlesztes-II\kötprog_1\kotprog-01-CLI\harry-potter-2\harry-potter-2\Harry_Potter_2\Harry_Potter_2\obj\Debug\netcoreapp3.1\Harry_Potter_2.pdb
+D:\Documents\School\5.felev\Alkalmazasfejlesztes-II\kötprog_1\kotprog-01-CLI\harry-potter-2\harry-potter-2\Harry_Potter_2\Harry_Potter_2\obj\Debug\netcoreapp3.1\Harry_Potter_2.genruntimeconfig.cache
