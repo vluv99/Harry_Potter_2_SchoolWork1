@@ -35,8 +35,6 @@ namespace Harry_Potter_2
         {
             Sentances = new List<string>();
         }
-
-
     }
 
     class Sentance
@@ -57,67 +55,8 @@ namespace Harry_Potter_2
             csvReader.Configuration.Delimiter = ";";
             var characters = csvReader.GetRecords<Character>().ToList();
 
-            //2. feladat kiratas - 10. feladat
+            //2. feladat kiratas - (10. feladat)
             WriteData(characters, 2);
-
-            #region old
-            /*
-var lines =
-    from line in File.ReadLines(@"Characters.csv").Skip(1)
-    select line.Split(';');
-
-var characters =
-    from tokens in lines
-    select new Character
-    {
-        Id = int.Parse(tokens[0]),
-        Name = tokens[1],
-        Gender = tokens[2],
-        Job = tokens[3].Split('|').ToList(),
-        House = tokens[4],
-        Wand = tokens[5],
-        Patronus = tokens[6],
-        Species = tokens[7],
-        BloodStatus = tokens[8],
-        Hair = tokens[9].Split('|').ToList(),
-        Eye = tokens[10],
-        Loyalty = tokens[11].Split('|').ToList(),
-        Skills = tokens[12].Split('|').ToList(),
-        Birth = tokens[13],
-        Death = tokens[14]
-    };
-
-
-
- var characters = File.ReadLines(@"..\Characters.csv")
-   .Select(line => line.Split(';'))
-   .Select(tokens => new Character
-   {
-       Id = int.Parse(tokens[0]),
-       Name = tokens[1],
-       Gender = tokens[2],
-       Job = tokens[3].Split('|').ToList(),
-       House = tokens[4],
-       Wand = tokens[5],
-       Patronus = tokens[6],
-       Species = tokens[7],
-       BloodStatus = tokens[8],
-       Hair = tokens[9].Split('|').ToList(),
-       Eye = tokens[10],
-       Loyalty = tokens[11].Split('|').ToList(),
-       Skills = tokens[12].Split('|').ToList(),
-       Birth = tokens[13],
-       Death = tokens[14]
-   })
-   .ToList();
-*/
-
-
-            /*foreach (var character in characters) //character read test
-            {
-                Console.WriteLine(character.Name);
-            }*/
-            #endregion
 
             //3. feladat
             var reader2 = new StreamReader(@"Harry-Potter-2.csv");
@@ -126,6 +65,8 @@ var characters =
             var sentances = csvReader2.GetRecords<Sentance>().ToList();
 
             var nicknameToName = new Dictionary<string, string>();
+            
+#region Character mapping
             nicknameToName.Add("HARRY", "Harry James Potter"); //
             nicknameToName.Add("VERNON", "Vernon Dursley"); //
             nicknameToName.Add("PETUNIA", "Petunia Dursley"); //
@@ -197,18 +138,17 @@ var characters =
             //nicknameToName.Add("FRED, GEORGE, RON", "Vernon Dursley");
             //nicknameToName.Add("FRED, GEORGE, RON", "Vernon Dursley");
             //nicknameToName.Add("FRED, GEORGE, RON", "Vernon Dursley");
+#endregion
 
             foreach (var sentance in sentances)
             {
-                List<string> lits;
+                List<string> lits = new List<string>();
                 if (!nicknameToName.ContainsKey(sentance.name.Trim()))
                 {
-                    lits = sentance.name.Split(new[] { ",", "-", "&", "AND" }, StringSplitOptions.RemoveEmptyEntries).Select(i => i.Trim()).ToList();
-
+                    lits.AddRange(sentance.name.Split(new[] { ",", "-", "&", "AND" }, StringSplitOptions.RemoveEmptyEntries).Select(i => i.Trim()).ToList());
                 }
                 else
                 {
-                    lits = new List<string>();
                     lits.Add(sentance.name);
                 }
 
@@ -216,7 +156,6 @@ var characters =
                 {
                     if (nicknameToName.ContainsKey(item.Trim()))
                     {
-
                         string personName = nicknameToName[item.Trim()];
 
                         var person =
@@ -224,11 +163,7 @@ var characters =
                              where c.Name == personName
                              select c).FirstOrDefault();
 
-                        if (person == null)
-                        {
-                            //Console.WriteLine(sentance.name);
-                        }
-                        else
+                        if (person != null)
                         {
                             person.Sentances.Add(sentance.sentance);
                         }
@@ -240,7 +175,7 @@ var characters =
                 }
             }
 
-            //3. feladat kiratas - 10. feladat
+            //3. feladat kiratas - (10. feladat)
             var Z_A =
                 from c in characters
                 orderby c.Name descending
@@ -269,7 +204,7 @@ var characters =
                 from c in characters
                 group c by c.BloodStatus;
 
-            //4. feladat kiratas - 10. feladat
+            //4. feladat kiratas - (10. feladat)
             writer = new StreamWriter($"task4.csv");
             csvWriter = new CsvWriter(writer, CultureInfo.InvariantCulture);
             csvWriter.Configuration.Delimiter = ";";
@@ -293,7 +228,7 @@ var characters =
             var max = houses.Max().Key;
             var maxNum = houses.Max().Item1;
 
-            //5. feladat kiratas - 10. feladat
+            //5. feladat kiratas - (10. feladat)
             writer = new StreamWriter($"task5.csv");
             csvWriter = new CsvWriter(writer, CultureInfo.InvariantCulture);
             csvWriter.Configuration.Delimiter = ";";
@@ -308,7 +243,7 @@ var characters =
             var min = houses.Min().Key;
             var minNum = houses.Min().Item1;
 
-            //6. feladat kiratas - 10. feladat
+            //6. feladat kiratas - (10. feladat)
             writer = new StreamWriter($"task6.csv");
             csvWriter = new CsvWriter(writer, CultureInfo.InvariantCulture);
             csvWriter.Configuration.Delimiter = ";";
@@ -326,7 +261,7 @@ var characters =
                 orderby c.Sentances.Count
                 select (c, c.Sentances.Count);
 
-            //7. feladat kiratas - 10. feladat
+            //7. feladat kiratas - (10. feladat)
             writer = new StreamWriter($"task7.csv");
             csvWriter = new CsvWriter(writer, CultureInfo.InvariantCulture);
             csvWriter.Configuration.Delimiter = ";";
@@ -354,7 +289,7 @@ var characters =
                       select f).Count()
                     );
 
-            //8. feladat kiratas - 10. feladat
+            //8. feladat kiratas - (10. feladat)
             writer = new StreamWriter($"task8.csv");
             csvWriter = new CsvWriter(writer, CultureInfo.InvariantCulture);
             csvWriter.Configuration.Delimiter = ";";
@@ -375,7 +310,7 @@ var characters =
                 where !c.Job.Contains("Student")
                 select c;
 
-            //9. feladat kiratas - 10. feladat
+            //9. feladat kiratas - (10. feladat)
             writer = new StreamWriter($"task9.csv");
             csvWriter = new CsvWriter(writer, CultureInfo.InvariantCulture);
             csvWriter.Configuration.Delimiter = ";";
@@ -390,6 +325,7 @@ var characters =
             }
         }
 
+        //10. feladat funcion
         static void WriteData(IEnumerable<Character> list, int i)
         {
             var writer = new StreamWriter($"task{i}.csv");
